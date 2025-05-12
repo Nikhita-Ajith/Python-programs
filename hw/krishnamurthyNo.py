@@ -10,9 +10,9 @@ while s>0:
     sum_f=sum_f+f
     s=s//10
 if sum_f==n:
-    print("krishnamurthy no")
+    print("krishnamurthy no.")
 else:
-    print("not krishnamurthy no")
+    print("not krishnamurthy no.")
 
 
 
