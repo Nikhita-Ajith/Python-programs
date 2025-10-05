@@ -1,0 +1,64 @@
+def create_file():
+    f = open("file.txt", "w")
+    n = int(input("Enter the number of lines: "))
+    for i in range(n):
+        l = input("Enter the line: ")
+        f.write(l + "\n")
+    f.close()
+
+
+def remove_lines():
+    r = []
+    e = []
+    t = open("file.txt", "r")
+    w = t.readlines()
+    ch = input("Enter the word to be removed: ")
+    for i in w:
+        if ch in i:
+            r.append(i)
+        else:
+            e.append(i)
+
+    m = open("file2.txt", "w")
+    m.writelines(r)
+    m.close()
+
+    m = open("file.txt", "w")
+    m.writelines(e)
+    m.close()
+
+    t.close()
+
+
+def display():
+    m = open("file.txt", "r")
+    p = m.read()
+    print(p)
+    m.close()
+
+
+def display2():
+    n = open("file2.txt", "r")
+    p = n.read()
+    print(p)
+    n.close()
+
+
+while True:
+    print("1. Create file")
+    print("2. Remove lines containing word")
+    print("3. Display file after removing lines")
+    print("4. Display file of removed lines")
+
+    ch = int(input("Enter your choice: "))
+
+    if ch == 1:
+        create_file()
+    elif ch == 2:
+        remove_lines()
+    elif ch == 3:
+        display()
+    elif ch == 4:
+        display2()
+    else:
+        break
